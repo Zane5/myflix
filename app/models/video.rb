@@ -1,6 +1,6 @@
-class Video < ActiveRecorder::Base
-
-  has_many :categories, throuth: :video_categories
+class Video < ActiveRecord::Base
+  has_many :video_categories
+  has_many :categories, through: :video_categories
 
   validates_presence_of :title, :description
   #validates_uniqueness_of :title

@@ -6,6 +6,7 @@ development:
   username: vagrant
   password: vagrant
 
+
 test:
   adapter: postgresql
   encoding: unicode

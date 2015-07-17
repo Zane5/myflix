@@ -6,31 +6,30 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
-Category.create(title: "Comdey")
-Category.create(title: "Cartoon")
-Category.create(title: "Drama")
-Video.create(title: "Monk", 
+comdey = Category.create(name: "Comdey")
+cartoon =Category.create(name: "Cartoon")
+drama = Category.create(name: "Drama")
+monk = Video.create(title: "Monk", 
             description: "Monk is well",
             cover_small_url: "/tmp/monk.jpg",
             cover_large_url: "/tmp/monk_large.jpg",
             categories: [comdey, cartoon]
             )
-Video.create(title: "Family Guy",
+family_guy = Video.create(title: "Family Guy",
              description: "Family guy is well",
-             cover_samll_url: "/tmp/family_guy.jpg",
+             cover_small_url: "/tmp/family_guy.jpg",
              cover_large_url: "/tmp/family_guy_large.jpg",
              categories: [comdey, cartoon, drama]
             )
-Video.create(title: "South Park",
+south_park = Video.create(title: "South Park",
              description: "South Park is well",
-             cover_samll_url: "/tmp/south_park.jpg",
+             cover_small_url: "/tmp/south_park.jpg",
              cover_large_url: "/tmp/south_park_large.jpg",
-             category_id: 1 
-             categories: [cartoon, drama]
+             categories: [comdey, drama]
             ) 
-Video.create(title: "Futurama",
+futurama = Video.create(title: "Futurama",
              description: "Futurama is good",
-             cover_samll_url: "/tmp/futurama.jpg",
+             cover_small_url: "/tmp/futurama.jpg",
              cover_large_url: "/tmp/futurama_large.jpg",
-             categories: [comdey, cartoon, drama]
+             categories: [cartoon, drama]
             ) 
