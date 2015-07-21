@@ -2,7 +2,7 @@
   %header
     %h1= link_to category.name, category
   .video.row
-    - category.videos.each do |video|
+    - category.recent_videos.each do |video|
       .video.col-sm-2
         =link_to video do
           =image_tag video.cover_small_url
