@@ -2,11 +2,11 @@
   .container
     .row
       .video_large_cover.col-sm-7.col-sm-offset-1
-        %img{src: @video.cover_large_url}
+        = image_tag @video.cover_large_url
       .video_info.col-sm-3
         %header
           %h3= @video.title
-          %span Average Rating: #{average_rating(@video)}
+          %span Average Rating: #{@video.average_rating}
         %p= @video.description
         .actions
           =link_to do
