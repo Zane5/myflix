@@ -7,7 +7,6 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
 comedies = Category.create(name: "Comedies")
-#cartoon =Category.create(name: "Cartoon")
 dramas = Category.create(name: "Dramas")
 
 futurama = Video.create(title: "Futurama",
@@ -65,3 +64,11 @@ south_park = Video.create(title: "South Park",
              cover_large_url: "/tmp/south_park_large.jpg",
              category: comedies
             ) 
+
+zane = User.create(full_name: "Zane Z",
+                  password: "password",
+                  email: "zane@example.com"
+                  )
+
+Review.create(user: zane, video: monk, rating: 5, content: "This is a really good movie!")
+Review.create(user: zane, video: monk, rating: 2, content: "This is a horrible movie.!")
