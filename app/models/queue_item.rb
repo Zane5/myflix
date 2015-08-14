@@ -24,9 +24,10 @@ class QueueItem < ActiveRecord::Base
     category.name
   end
 
+  private
 
   def review
     @review ||= Review.find_by(user_id: user.id, video_id: video.id)
   end
-  private
+
 end
