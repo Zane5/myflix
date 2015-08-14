@@ -34,10 +34,6 @@ class QueueItemsController < ApplicationController
     QueueItem.create(video: video, user: current_user, position: current_user.new_queue_item_position) unless current_user_queued_video?(video)
   end
 
-  def current_user_queued_video?(video)
-    current_user.queue_items.map(&:video).include?(video)
-  end
-
   def update_queue_items
     ActiveRecord::Base.transaction do
       params[:queue_items].each do |queue_item_data|
