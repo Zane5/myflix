@@ -12,6 +12,8 @@ Myflix::Application.routes.draw do
   post 'my_queue', to: 'queue_items#update_queue'
 
   resources :users, only: [:show]
+  get 'people', to: 'relationships#index'
+  resources :relationships, only: [:create, :destroy]
 
   resources :videos, only: [:index, :show] do
     collection do
