@@ -1,4 +1,5 @@
 Myflix::Application.configure do
+  Rails.application.routes.default_url_options[:host] = '192.168.33.12:3000'
   config.cache_classes = true
 
   config.serve_static_assets = true

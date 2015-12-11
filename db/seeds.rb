@@ -65,15 +65,21 @@ south_park = Video.create(title: "South Park",
              category: comedies
             ) 
 
-zane = User.create(full_name: "Zane Z",
-                  password: "password",
-                  email: "zane@example.com"
-                  )
-tim = User.create(full_name: "Tim T",
-                  password: "password",
-                  email: "tim@example.com"
-                  )
-
+zane = User.create!(
+  full_name: "Zane Z",
+  password: "password",
+  email: "zane@example.com"
+)
+tim = User.create!(
+  full_name: "Tim T",
+  password: "password",
+  email: "tim@example.com"
+)
+fox = User.create!(
+  full_name: "fox T",
+  password: "password",
+  email: "fat.fox@gmail.com"
+)
 
 Review.create(user: zane, video: monk, rating: 5, content: "This is a really good movie!")
 Review.create(user: zane, video: monk, rating: 2, content: "This is a horrible movie.!")

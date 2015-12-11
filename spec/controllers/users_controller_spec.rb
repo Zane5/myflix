@@ -70,7 +70,7 @@ describe UsersController do
     it "sets @user" do
       set_current_user
       alice = Fabricate(:user)
-      get :show, id: alice.id
+      get :show, token: alice.token
       expect(assigns(:user)).to eq(alice)
     end
   end

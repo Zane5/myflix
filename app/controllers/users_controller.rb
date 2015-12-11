@@ -16,7 +16,7 @@ class UsersController < ApplicationController
   end
   
   def show
-    @user = User.find(params[:id])
+    @user = User.where(token: params[:id]).first
   end
 
   private
