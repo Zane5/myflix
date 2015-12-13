@@ -7,14 +7,18 @@ class QueueItemsController < ApplicationController
 
   def create
     video = Video.find(params[:video_id])
+
     queue_video(video)
+
     redirect_to my_queue_path
   end
 
   def destroy
     queue_item = QueueItem.find(params[:id])
+
     queue_item.destroy if current_user.queue_items.include?(queue_item)
     current_user.normalize_queue_item_positions
+
     redirect_to my_queue_path
   end
 
@@ -25,6 +29,7 @@ class QueueItemsController < ApplicationController
     rescue ActiveRecord::RecordInvalid
       flash[:error] = "Invalid position number."
     end
+
     redirect_to my_queue_path    
   end
 

@@ -36,7 +36,7 @@ describe PasswordResetsController do
         alice = Fabricate(:user, password: 'old_password')
         alice.update_column(:token, '12345')
         post :create, token: '12345', password: 'new_password'
-        expect(alice.reload.authenticate('new_password')).to be_true
+        expect(alice.reload.authenticate('new_password')).to be_truthy
       end
 
       it "sets the flash success message" do
@@ -62,3 +62,4 @@ describe PasswordResetsController do
     end
   end
 end
+

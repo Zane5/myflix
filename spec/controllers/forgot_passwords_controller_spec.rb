@@ -9,7 +9,7 @@ describe ForgotPasswordsController do
       end 
       it "shows an error message" do
         post :create, email: ''
-        expect(flash.now[:error]).to eq("Email cannot be blank.")
+        expect(flash[:error]).to eq("Email cannot be blank.")
       end
     end
     context "with existing email" do
@@ -37,3 +37,4 @@ describe ForgotPasswordsController do
     end
   end
 end
+
