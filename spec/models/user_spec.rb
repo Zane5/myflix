@@ -17,13 +17,13 @@ describe User do
       user = Fabricate(:user)
       video = Fabricate(:video)
       Fabricate(:queue_item, user: user, video: video)
-      user.queued_video?(video).should be_truthy
+      expect(user.queued_video?(video)).to be_truthy
     end
 
     it "returns false when the user hasn't queued the video" do
       user = Fabricate(:user)
       video = Fabricate(:video)
-      user.queued_video?(video).should be_falsey
+      expect(user.queued_video?(video)).to be_falsey
     end
   end
 
@@ -32,14 +32,14 @@ describe User do
       alice = Fabricate(:user)
       bob = Fabricate(:user)
       Fabricate(:relationship, leader: bob, follower: alice)
-      expect(alice.follows?(bob)).to be_true
+      expect(alice.follows?(bob)).to be_truthy
     end
 
     it "returns false if the user does not have a following relationship with antoher user" do
       alice = Fabricate(:user)
       bob = Fabricate(:user)
       Fabricate(:relationship, leader: alice, follower: bob)
-      expect(alice.follows?(bob)).to be_false
+      expect(alice.follows?(bob)).to be_falsey
     end
   end
 
