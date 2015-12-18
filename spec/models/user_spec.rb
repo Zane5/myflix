@@ -44,7 +44,7 @@ describe User do
   end
 
   describe "#follow" do
-    it "follower antoher user" do
+    it "follower another user" do
       alice = Fabricate(:user)
       bob = Fabricate(:user)
       alice.follow(bob)

@@ -42,7 +42,11 @@ class UsersController < ApplicationController
       invitation = Invitation.find_by(token: params[:invitation_token])
       @user.follow(invitation.inviter)
       invitation.inviter.follow(@user)
-      invitation.update_column(:token, nil)
+      remove_token(invitation, :token)
     end
+  end
+  
+  def remove_token(invitation, token)
+      invitation.update_column(token, nil)
   end
 end
