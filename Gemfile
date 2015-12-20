@@ -14,6 +14,9 @@ gem 'bcrypt-ruby', '~> 3.1.2'
 gem 'fabrication'
 gem 'faker'
 gem 'sidekiq'
+gem 'carrierwave'
+gem 'mini_magick'
+#gem 'carrierwave-aws'
 
 group :development do
   gem 'thin'
