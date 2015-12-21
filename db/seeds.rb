@@ -13,67 +13,70 @@ futurama = Video.create(title: "Futurama",
              description: "Futurama is good",
              small_cover: "/tmp/futurama.jpg",
              large_cover: "/tmp/futurama_large.jpg",
-             category: comedies
+             category: comedies,
+             video_url: "https://youtu.be/0Qm07MUkgiA"
             ) 
 monk = Video.create(title: "Monk", 
             description: "Monk is well",
             small_cover: "/tmp/monk.jpg",
             large_cover: "/tmp/monk_large.jpg",
-            category: dramas 
+            category: dramas, 
+            video_url: "https://youtu.be/NG_lfqn5I1I"
             )
 family_guy = Video.create(title: "Family Guy",
              description: "Family guy is well",
              small_cover: "/tmp/family_guy.jpg",
              large_cover: "/tmp/family_guy_large.jpg",
-             category: comedies 
+             category: comedies, 
+             video_url: "https://youtu.be/1DjAnuS579k"
             )
 south_park = Video.create(title: "South Park",
              description: "South Park is well",
              small_cover: "/tmp/south_park.jpg",
              large_cover: "/tmp/south_park_large.jpg",
-             category: comedies
+             category: comedies,
+             video_url: "https://youtu.be/lSMTVZ58fvc?t=31"
             ) 
-
 futurama = Video.create(title: "Futurama",
              description: "Futurama is good",
              small_cover: "/tmp/futurama.jpg",
              large_cover: "/tmp/futurama_large.jpg",
-             category: comedies
+             category: comedies,
+             video_url: "https://youtu.be/0Qm07MUkgiA"
             ) 
 monk = Video.create(title: "Monk", 
             description: "Monk is well",
             small_cover: "/tmp/monk.jpg",
             large_cover: "/tmp/monk_large.jpg",
-            category: dramas 
+            category: dramas, 
+            video_url: "https://youtu.be/NG_lfqn5I1I"
             )
 family_guy = Video.create(title: "Family Guy",
              description: "Family guy is well",
              small_cover: "/tmp/family_guy.jpg",
              large_cover: "/tmp/family_guy_large.jpg",
-             category: comedies 
+             category: comedies, 
+             video_url: "https://youtu.be/1DjAnuS579k"
             )
 south_park = Video.create(title: "South Park",
              description: "South Park is well",
              small_cover: "/tmp/south_park.jpg",
              large_cover: "/tmp/south_park_large.jpg",
-             category: comedies
-            ) 
-south_park = Video.create(title: "South Park",
-             description: "South Park is well",
-             small_cover: "/tmp/south_park.jpg",
-             large_cover: "/tmp/south_park_large.jpg",
-             category: comedies
+             category: comedies,
+             video_url: "https://youtu.be/lSMTVZ58fvc?t=31"
             ) 
 
 zane = User.create!(
   full_name: "Zane Z",
   password: "password",
-  email: "zane@example.com"
+  email: "zane@example.com",
+  admin: true
 )
 tim = User.create!(
   full_name: "Tim T",
   password: "password",
-  email: "tim@example.com"
+  email: "tim@example.com",
+  admin: true
 )
 fox = User.create!(
   full_name: "fox T",
