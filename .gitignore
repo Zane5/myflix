@@ -14,3 +14,6 @@
 /log/*.log
 /tmp
 /dump.rdb
+
+# Ignore application configuration
+/config/application.yml
