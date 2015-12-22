@@ -21,7 +21,7 @@ class UsersController < ApplicationController
           :description => "Sign up charge for #{@user.email}"
         )
       rescue Stripe::CardError => e
-        # The card has been declined
+        flash[:error] = e.message
       end
 
       AppMailer.delay.send_welcome_email(@user)
