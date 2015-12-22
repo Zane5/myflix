@@ -90,10 +90,6 @@ describe Admin::VideosController do
         post :create, video: { category_id: category.id, description: "good show!" }
         expect(flash.now[:error]).to be_present
       end
-
-
     end
-
-
   end
 end

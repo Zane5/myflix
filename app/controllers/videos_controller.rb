@@ -14,16 +14,4 @@ class  VideosController < ApplicationController
   def search
     @results = Video.search_by_title(params[:search_term])
   end
-
-  def create
-    @video = Video.new(video_params)
-    @video.save
-  end
-
-  private
-
-  def video_params
-    params.require(:video).permit(:title, :description, :small_cover, :large_cover, :categroy, :video_url)
-  end
-
 end
