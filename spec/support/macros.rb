@@ -14,7 +14,8 @@ def sign_in(a_user=nil)
   click_button "Sign in"
 end
 
-def sign_out
+def sign_out(user)
+  click_link "Welcome"
   click_link "Sign Out"
 end
 

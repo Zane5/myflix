@@ -14,7 +14,7 @@ class UsersController < ApplicationController
       token = params[:stripeToken]
 
       begin
-        charge = Stripe::Charge.create(
+        charge = StripeWrapper::Charge.create(
           :amount => 999, # amount in cents, again
           :currency => "usd",
           :source => token,

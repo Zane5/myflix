@@ -1,10 +1,8 @@
-<script type="text/javascript" src="https://js.stripe.com/v2/"></script>
-
-<script type="text/javascript">
-Stripe.setPublishableKey("#{ENV['STRIPE_PUBLISHABLE_KEY']}");
-</script>
-
-= javascript_include_tag 'payment'
+= content_for :head do
+  %script(type="text/javascript" src="https://js.stripe.com/v2/")
+  :javascript
+    Stripe.setPublishableKey('#{ENV["STRIPE_PUBLISHABLE_KEY"]}');
+  = javascript_include_tag "registration"
 
 %section.register.container
   .row
@@ -21,13 +19,13 @@ Stripe.setPublishableKey("#{ENV['STRIPE_PUBLISHABLE_KEY']}");
         %fieldset.credit_card
           %span.pay-ment-errors
           .form-group
-            %label.control-label.col-sm-2 Credit Card Number
+            %label.control-label.col-sm-2(for="credit-card-number") Credit Card Number
             .col-sm-6
-              = text_field_tag :card_number, nil, "data-stripe" => "number", class: "form-control"
+              = text_field_tag :card_number, nil, "data-stripe" => "number", class: "form-control", id: "credit-card-number"
           .form-group
-            %label.control-label.col-sm-2 Security Code
+            %label.control-label.col-sm-2(for="security-code") Security Code
             .col-sm-6
-              = text_field_tag :cvc, nil, "data-stripe" => "cvc", class: "form-control"
+              = text_field_tag :cvc, nil, "data-stripe" => "cvc", class: "form-control", id: "security-code"
           .form-group
             %label.control-label.col-sm-2 Expiration
             .col-sm-3
