@@ -11,8 +11,6 @@ gem 'jquery-rails'
 gem 'pg'
 gem 'bootstrap_form'
 gem 'bcrypt-ruby', '~> 3.1.2'
-gem 'fabrication'
-gem 'faker'
 gem 'sidekiq'
 gem "figaro"
 gem 'carrierwave'
@@ -31,6 +29,8 @@ group :development, :test do
   gem 'pry'
   gem 'pry-nav'
   gem 'rspec-rails' 
+  gem 'faker'
+  gem 'fabrication'
 end
 
 group :test do
@@ -41,7 +41,6 @@ group :test do
   gem 'capybara-email'
   gem 'vcr'
   gem 'webmock'
-#  gem 'selenium-webdriver'
   gem 'poltergeist'
 end
 

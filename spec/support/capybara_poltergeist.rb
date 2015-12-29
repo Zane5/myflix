@@ -4,11 +4,10 @@ RSpec.configure do |config|
   Capybara.server_port = 52662
 
   Capybara.register_driver :poltergeist do |app|
-    Capybara::Poltergeist::Driver.new(app, inspector: true, debug: true,  timeout: 1.minute)
+    Capybara::Poltergeist::Driver.new(app, inspector: true, debug: false)
   end
 
   Capybara.default_driver = :poltergeist
   Capybara.current_driver = :poltergeist
-  #internet = Capybara.current_session
   Capybara.javascript_driver = :poltergeist
 end

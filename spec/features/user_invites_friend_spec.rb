@@ -5,8 +5,9 @@ feature 'User invites friend' do
     alice = Fabricate(:user)
     sign_in(alice)
 
-    invite_a_friend(alice)
+    invite_a_friend
     friend_accepts_invitation
+    sleep 6
     friend_signs_in
 
     friend_should_follow(alice)
@@ -15,13 +16,13 @@ feature 'User invites friend' do
     clear_email
   end
 
-  def invite_a_friend(user)
+  def invite_a_friend
     visit new_invitation_path
     fill_in "Friend's Name", with: "Jone Doe"
     fill_in "Friend's Email Address", with: "john@example.com"
     fill_in "Message",  with: "Hello please join this site."
     click_button "Send Invitation"
-    sign_out(user)
+    sign_out
   end
 
   def friend_accepts_invitation
@@ -40,6 +41,7 @@ feature 'User invites friend' do
     fill_in "Email Address", with: "john@example.com"
     fill_in "Password", with: "password"
     click_button "Sign in"
+    save_screenshot('tmp/file2.png', :full => true)
   end
 
   def friend_should_follow(user)
