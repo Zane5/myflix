@@ -6,7 +6,8 @@
       .video_info.col-sm-3
         %header
           %h3= @video.title
-          %span Average Rating: #{average_rating(@video)}
+          %span Average Rating: 
+          = @video.rating
         %p= @video.description
         = link_to "Watch Now", @video.video_url, class: "btn btn-default"
         = link_to "+ My Queue", queue_items_path(video_id: @video.id), method: :post, class: 'btn btn-default' unless current_user.queued_video?(@video)

@@ -1,5 +1,5 @@
 RSpec.configure do |config|
-  Capybara.default_max_wait_time = 60 # Seconds to wait before timeout error. Default is 2
+  Capybara.default_max_wait_time = 5 # Seconds to wait before timeout error. Default is 2
 
   Capybara.server_port = 52662
 
@@ -7,7 +7,5 @@ RSpec.configure do |config|
     Capybara::Poltergeist::Driver.new(app, inspector: true, debug: false)
   end
 
-  Capybara.default_driver = :poltergeist
-  Capybara.current_driver = :poltergeist
   Capybara.javascript_driver = :poltergeist
 end

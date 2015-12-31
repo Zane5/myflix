@@ -17,6 +17,7 @@ gem 'carrierwave'
 gem 'mini_magick'
 gem 'carrierwave-aws'
 gem 'stripe'
+gem 'draper'
 
 group :development do
   gem 'thin'
@@ -34,7 +35,7 @@ group :development, :test do
 end
 
 group :test do
-  gem 'database_cleaner'#, '1.2.0'
+  gem 'database_cleaner', '1.4.1'
   gem 'launchy'
   gem 'shoulda-matchers'
   gem 'capybara'
