@@ -5,7 +5,7 @@ http_interactions:
     uri: https://api.stripe.com/v1/charges
     body:
       encoding: US-ASCII
-      string: amount=999&currency=usd&description=Sign+up+charge+for+john%40example.com&source=tok_17iiRjFbpquSrt2NwX3Af4Bt
+      string: amount=999&currency=usd&description=Sign+up+charge+for+john%40example.com&source=tok_17k9bdFbpquSrt2NoQEWNl7U
     headers:
       Accept:
       - "*/*; q=0.5, application/xml"
@@ -31,11 +31,11 @@ http_interactions:
       Server:
       - nginx
       Date:
-      - Fri, 26 Feb 2016 10:03:44 GMT
+      - Tue, 01 Mar 2016 09:15:53 GMT
       Content-Type:
       - application/json
       Content-Length:
-      - '1473'
+      - '1500'
       Connection:
       - keep-alive
       Access-Control-Allow-Credentials:
@@ -49,7 +49,7 @@ http_interactions:
       Cache-Control:
       - no-cache, no-store
       Request-Id:
-      - req_7yfnRDJCnY0bso
+      - req_809vLv5JExURQD
       Stripe-Version:
       - '2015-10-16'
       Strict-Transport-Security:
@@ -58,14 +58,14 @@ http_interactions:
       encoding: UTF-8
       string: |
         {
-          "id": "ch_17iiRoFbpquSrt2NEGu6IaBQ",
+          "id": "ch_17k9bgFbpquSrt2Nz6flGIj1",
           "object": "charge",
           "amount": 999,
           "amount_refunded": 0,
           "application_fee": null,
-          "balance_transaction": "txn_17iiRoFbpquSrt2Nxo6hwdUj",
+          "balance_transaction": "txn_17k9bgFbpquSrt2NkTeP04y8",
           "captured": true,
-          "created": 1456481024,
+          "created": 1456823752,
           "currency": "usd",
           "customer": null,
           "description": "Sign up charge for john@example.com",
@@ -87,11 +87,11 @@ http_interactions:
             "data": [],
             "has_more": false,
             "total_count": 0,
-            "url": "/v1/charges/ch_17iiRoFbpquSrt2NEGu6IaBQ/refunds"
+            "url": "/v1/charges/ch_17k9bgFbpquSrt2Nz6flGIj1/refunds"
           },
           "shipping": null,
           "source": {
-            "id": "card_17iiRjFbpquSrt2NarYWqSJ7",
+            "id": "card_17k9bdFbpquSrt2N4BVdWNso",
             "object": "card",
             "address_city": null,
             "address_country": null,
@@ -115,9 +115,10 @@ http_interactions:
             "name": null,
             "tokenization_method": null
           },
+          "source_transfer": null,
           "statement_descriptor": null,
           "status": "succeeded"
         }
     http_version: 
-  recorded_at: Fri, 26 Feb 2016 10:03:44 GMT
+  recorded_at: Tue, 01 Mar 2016 09:15:53 GMT
 recorded_with: VCR 3.0.1

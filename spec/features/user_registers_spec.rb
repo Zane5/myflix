@@ -7,7 +7,7 @@ feature 'User Registers', :js, :vcr do
     fill_in_valid_user_info
     fill_in_valid_card
     click_button "Sign Up"
-    sleep 0.2
+    sleep 0.5
     expect(page).to have_content("Thank you for registering with MyFlix. Please Sign in now.")
   end
 
@@ -22,7 +22,7 @@ feature 'User Registers', :js, :vcr do
     fill_in_valid_user_info
     fill_in_declined_card
     click_button "Sign Up"
-    sleep 0.25
+    sleep 0.33
     expect(page).to have_content("Your card was declined.")
   end
 
@@ -30,7 +30,7 @@ feature 'User Registers', :js, :vcr do
     fill_in_invalid_user_info
     fill_in_valid_card
     click_button "Sign Up"
-    sleep 0.2
+    sleep 0.32
     expect(page).to have_content("Invalid user information. Please check the errors below.")
   end
 
@@ -46,7 +46,7 @@ feature 'User Registers', :js, :vcr do
     fill_in_invalid_user_info
     fill_in_declined_card
     click_button "Sign Up"
-    sleep 0.2
+    sleep 0.34
     expect(page).to have_content("Please fix the error below")
   end
 

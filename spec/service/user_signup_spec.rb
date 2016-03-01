@@ -55,14 +55,14 @@ describe UserSignup do
       it "does not create a new user record" do
         charge = double(:charge, successful?: false, error_message: "Your card was declined.")
         allow(StripeWrapper::Charge).to receive(:create).and_return(charge)
-        UserSignup.new(Fabricate.build(:user)).sign_up("1231232", nil)
+        UserSignup.new(Fabricate.build(:user)).sign_up("1231232", "default_invitation_token")
         expect(User.count).to eq(0)
       end
     end
 
     context "with invalid personal info" do
       before do
-        UserSignup.new(User.new(email: "z@example.com")).sign_up("1231232", nil)
+        UserSignup.new(User.new(email: "z@example.com")).sign_up("1231232", "default_invitation_token")
       end
 
       it "does not create the user" do

@@ -1,12 +1,12 @@
 class UserSignup
 
-  attr_reader :error_message
+  attr_accessor :error_message
 
   def initialize(user)
     @user = user
   end
 
-  def sign_up(stripe_token, invitation_token)
+  def sign_up(stripe_token, invitation_token = nil)
     if @user.valid?
       charge = StripeWrapper::Charge.create(
           amount: 999, # amount in cents, again
@@ -15,27 +15,25 @@ class UserSignup
         )
       if charge.successful? 
         @user.save
-        handle_invitation(invitation_token)
-        AppMailer.delay.send_welcome_email(@user)
-        @status = :success
-        self
+        handle_invitation(invitation_token) if invitation_token
+        send_welcome_message_email(@user)
+        @status = :success 
       else
         @status = :failed
         @error_message = charge.error_message
-        self
       end
     else
       @status = :failed
       @error_message = "Invalid user information. Please check the errors below."
-      self
     end
+    self
   end
 
   def successful?
     @status == :success
   end
 
-  private
+private
   
   def handle_invitation(invitation_token)
     if invitation_token.present?
@@ -48,5 +46,9 @@ class UserSignup
 
   def remove_token(invitation, token)
       invitation.update_column(token, nil)
+  end
+
+  def send_welcome_message_email(user)
+    AppMailer.delay.send_welcome_email(user)
   end
 end
