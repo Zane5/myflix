@@ -38,7 +38,7 @@ feature 'User Registers', :js, :vcr do
     fill_in_invalid_user_info
     fill_in_invalid_card
     click_button "Sign Up"
-    sleep 0.25
+    sleep 0.4
     expect(page).to have_content("The card number is not a valid credit card number.")
   end
   

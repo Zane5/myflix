@@ -2,10 +2,10 @@
 http_interactions:
 - request:
     method: post
-    uri: https://api.stripe.com/v1/charges
+    uri: https://api.stripe.com/v1/customers
     body:
       encoding: US-ASCII
-      string: amount=999&currency=usd&description=Sign+up+charge+for+john%40example.com&source=tok_17k9dRFbpquSrt2Nd8myKAcW
+      string: email=john%40example.com&plan=base&source=tok_17koBdFbpquSrt2NVnVHsoul
     headers:
       Accept:
       - "*/*; q=0.5, application/xml"
@@ -22,7 +22,7 @@ http_interactions:
         version 3.13.0-39-generic (buildd@roseapple) (gcc version 4.8.2 (Ubuntu 4.8.2-19ubuntu1)
         ) #66-Ubuntu SMP Tue Oct 28 13:31:23 UTC 2014","hostname":"admin008"}'
       Content-Length:
-      - '109'
+      - '70'
   response:
     status:
       code: 402
@@ -31,11 +31,11 @@ http_interactions:
       Server:
       - nginx
       Date:
-      - Tue, 01 Mar 2016 09:17:44 GMT
+      - Thu, 03 Mar 2016 04:35:43 GMT
       Content-Type:
       - application/json
       Content-Length:
-      - '162'
+      - '134'
       Connection:
       - keep-alive
       Access-Control-Allow-Credentials:
@@ -49,7 +49,7 @@ http_interactions:
       Cache-Control:
       - no-cache, no-store
       Request-Id:
-      - req_809xMsj1G3wIHF
+      - req_80prcfCLBKlND9
       Stripe-Version:
       - '2015-10-16'
     body:
@@ -59,10 +59,10 @@ http_interactions:
           "error": {
             "message": "Your card was declined.",
             "type": "card_error",
-            "code": "card_declined",
-            "charge": "ch_17k9dUFbpquSrt2N6M8fi2E4"
+            "param": "",
+            "code": "card_declined"
           }
         }
     http_version: 
-  recorded_at: Tue, 01 Mar 2016 09:17:45 GMT
+  recorded_at: Thu, 03 Mar 2016 04:35:44 GMT
 recorded_with: VCR 3.0.1
