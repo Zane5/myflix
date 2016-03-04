@@ -1,6 +1,4 @@
 class Admin::VideosController < AdminsController
-  before_action :require_user
-
   def new
     @video = Video.new
   end
@@ -22,3 +20,4 @@ class Admin::VideosController < AdminsController
     params.require(:video).permit(:title, :description, :category_id, :large_cover, :small_cover, :video_url) 
   end
 end
+

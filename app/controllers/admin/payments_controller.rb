@@ -3,3 +3,4 @@ class Admin::PaymentsController < AdminsController
     @payment = Payment.all
   end
 end
+
