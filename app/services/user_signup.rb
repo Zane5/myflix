@@ -13,6 +13,7 @@ class UserSignup
         source: stripe_token
       )
       if customer.successful? 
+        @user.customer_token = customer.customer_token
         @user.save
         handle_invitation(invitation_token) if invitation_token
         send_welcome_message_email(@user)
