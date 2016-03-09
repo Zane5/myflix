@@ -5,7 +5,7 @@ http_interactions:
     uri: https://api.stripe.com/v1/customers
     body:
       encoding: US-ASCII
-      string: email=john%40example.com&plan=base&source=tok_17koBdFbpquSrt2NVnVHsoul
+      string: email=john%40example.com&plan=base&source=tok_17n3PWFbpquSrt2NnxTvHZZs
     headers:
       Accept:
       - "*/*; q=0.5, application/xml"
@@ -31,7 +31,7 @@ http_interactions:
       Server:
       - nginx
       Date:
-      - Thu, 03 Mar 2016 04:35:43 GMT
+      - Wed, 09 Mar 2016 09:15:20 GMT
       Content-Type:
       - application/json
       Content-Length:
@@ -49,7 +49,7 @@ http_interactions:
       Cache-Control:
       - no-cache, no-store
       Request-Id:
-      - req_80prcfCLBKlND9
+      - req_839iioVjzzZ03q
       Stripe-Version:
       - '2015-10-16'
     body:
@@ -64,5 +64,5 @@ http_interactions:
           }
         }
     http_version: 
-  recorded_at: Thu, 03 Mar 2016 04:35:44 GMT
+  recorded_at: Wed, 09 Mar 2016 09:15:20 GMT
 recorded_with: VCR 3.0.1
